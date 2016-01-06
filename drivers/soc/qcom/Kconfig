@@ -607,7 +607,6 @@ config QCOM_EARLY_RANDOM
 	  may not be truly random. Select this option to make an early call
 	  to get some random data to put in the pool. If unsure, say N.
 
-<<<<<<< HEAD
 config MSM_PACMAN
 	bool "Enable the Peripheral Access Control Manager (PACMan)"
 	help
