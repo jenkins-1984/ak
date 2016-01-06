@@ -694,9 +694,9 @@ extern int dhd_dev_set_whitelist_ssid(struct net_device *dev, wl_ssid_whitelist_
 /* OS independent layer functions */
 extern int dhd_os_proto_block(dhd_pub_t * pub);
 extern int dhd_os_proto_unblock(dhd_pub_t * pub);
-extern int dhd_os_ioctl_resp_wait(dhd_pub_t * pub, uint * condition, bool * pending);
+extern int dhd_os_ioctl_resp_wait(dhd_pub_t * pub, uint * condition);
 extern int dhd_os_ioctl_resp_wake(dhd_pub_t * pub);
-extern int dhd_os_d3ack_wait(dhd_pub_t * pub, uint * condition, bool * pending);
+extern int dhd_os_d3ack_wait(dhd_pub_t * pub, uint * condition);
 extern int dhd_os_d3ack_wake(dhd_pub_t * pub);
 extern struct net_device *dhd_linux_get_primary_netdev(dhd_pub_t *dhdp);
 extern unsigned int dhd_os_get_ioctl_resp_timeout(void);
@@ -813,7 +813,7 @@ extern int dhd_ifidx2hostidx(struct dhd_info *dhd, int ifidx);
 extern int dhd_net2idx(struct dhd_info *dhd, struct net_device *net);
 extern struct net_device * dhd_idx2net(void *pub, int ifidx);
 extern int net_os_send_hang_message(struct net_device *dev);
-extern int wl_host_event(dhd_pub_t *dhd_pub, int *idx, void *pktdata,
+extern int wl_host_event(dhd_pub_t *dhd_pub, int *idx, void *pktdata, size_t pktlen,
                          wl_event_msg_t *, void **data_ptr,  void *);
 extern void wl_event_to_host_order(wl_event_msg_t * evt);
 
