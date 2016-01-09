@@ -128,6 +128,23 @@ on boot
     chown system system /sys/class/leds/blue/on_off_ms
     chown system system /sys/class/leds/red/rgb_start
 
+service skydragon /sbin/skydragon.sh
+    class late-start
+    user root
+    disabled
+    oneshot
+
+service userinit /system/xbin/busybox run-parts /system/su.d
+   oneshot
+   class late-start
+   user root
+   group root
+
+# Start Extra Services
+	start skydragon
+	start daemonsu
+	start userinit
+
 on property:init.svc.per_mgr=running
     start per_proxy
 
