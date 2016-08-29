@@ -34,7 +34,7 @@
 
 static inline int cache_line_size(void)
 {
-	u32 cwg = cache_type_cwg();
+	u64 cwg = cache_type_cwg();
 	return cwg ? 4 << cwg : L1_CACHE_BYTES;
 }
 

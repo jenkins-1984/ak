@@ -75,7 +75,7 @@ static inline unsigned int __attribute_const__ read_cpuid_part_number(void)
 	return (read_cpuid_id() & 0xFFF0);
 }
 
-static inline u32 __attribute_const__ read_cpuid_cachetype(void)
+static inline u64 __attribute_const__ read_cpuid_cachetype(void)
 {
 	return read_cpuid(CTR_EL0);
 }
